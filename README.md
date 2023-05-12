@@ -73,7 +73,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 4. make file with name .env , copy from .env.example
 5. run "php artisan key:generate"
 6. run "php artisan migrate:fresh --seed"
-7. run "php artisan serve"
+7. run "php artisan passport:install"
+8. run "php artisan serve"
 
 INFO LOGIN USER:
 ADMIN: 

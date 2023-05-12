@@ -22,7 +22,10 @@ class NewsCommentController extends Controller
              $news = News::find($request->news_id);
 
              // Menambahkan komen ke tabel comments yang berelasi dengan tabel news
-             $news->comments()->create(Arr::except($data_validate, ['news_id']));
+             $news->comments()->create(Arr::except($data_validate, ['news_id']) + [
+                'user_id' => auth()->user()->id,
+                'user_name' => auth()->user()->name
+             ]);
 
              return response()->json([
                 'status' => 'success',
